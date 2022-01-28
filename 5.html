@@ -8,6 +8,16 @@
 
     <script>
       (function () {
+        let rules = [
+          'WebView',
+          // iOS webview will be the same as safari but missing "Safari"
+          '(iPhone|iPod|iPad)(?!.*Safari)',
+        ];
+        let webviewRegExp = new RegExp('(' + rules.join('|') + ')', 'ig');
+        let isWebview = !!window.navigator.userAgent.match(webviewRegExp)
+        alert('window.navigator.userAgent = ' + window.navigator.userAgent);
+        alert('isWebview = ' + String(isWebview));
+
         if (window.navigator.userAgent.toLowerCase().match(/iphone/) && !location.search.includes('noapp')) {
           // var now = new Date().valueOf();
           setTimeout(function () {
@@ -15,6 +25,7 @@
             //   alert('Ha! Welcome Back, native app user!');
             // }
             window.location.assign(location.href + '?noapp');
+            window.close();
           }, 1);
 
           try {
