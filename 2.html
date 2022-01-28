@@ -7,15 +7,15 @@
     <title>Open in app?</title>
 
     <script>
-      setTimeout(function () {
-        if (window.navigator.userAgent.toLowerCase().match(/iphone/)) {
-          var now = new Date().valueOf();
+      (function () {
+        if (window.navigator.userAgent.toLowerCase().match(/iphone/) && !location.search.includes('noapp')) {
+          // var now = new Date().valueOf();
           setTimeout(function () {
             // if (new Date().valueOf() - now > 100) {
             //   alert('Ha! Welcome Back, native app user!');
             // }
-            window.location.assign("https://apps.apple.com/us/app/ae-aerie/id467738064");
-          }, 250);
+            window.location.assign(location.href + '?noapp');
+          }, 1);
 
           try {
             window.location = 'ae://page/category/cat4130031';
@@ -23,7 +23,7 @@
             window.location = "https://giphy.com/explore/rick-roll";
           }
         }
-      }, 1000);
+      })();
     </script>
 </head>
 <body>
