@@ -289,6 +289,7 @@
     var window = this;
     try {
       var n = function(a) {
+            debugger;
           var b;
           a: {
             if (b = l.navigator)
@@ -299,18 +300,22 @@
           return -1 != b.indexOf(a)
         },
         r = function() {
+          debugger;
           return n("Safari") && !(q() || n("Coast") || n("Opera") || n("Edge") || n("Edg/") || n("OPR") || n("Firefox") || n("FxiOS") || n("Silk") || n("Android"))
         },
         q = function() {
+          debugger;
           return (n("Chrome") || n("CriOS")) && !n("Edge") || n("Silk")
         },
         t = function() {
+          debugger;
           return n("Android") && !(q() || n("Firefox") || n("FxiOS") || n("Opera") || n("Silk"))
         },
         aa = function(a) {
           return u(a)
         },
         w = function(a) {
+          debugger;
           Object.isFrozen(a) || (v ? a[v] |= 1 : void 0 !== a.g ? a.g |= 1 : Object.defineProperties(a, {
             g: {
               value: 1,
@@ -322,9 +327,11 @@
           return a
         },
         x = function(a) {
+          debugger;
           return null !== a && "object" === typeof a && !Array.isArray(a) && a.constructor === Object
         },
         z = function(a, b) {
+          debugger;
           if (null != a) {
             if (Array.isArray(a))
               a = y(a, b);
@@ -340,6 +347,7 @@
           }
         },
         y = function(a, b) {
+          debugger;
           for (var c = a.slice(), d = 0; d < c.length; d++)
             c[d] = z(c[d], b);
           if (b = Array.isArray(a)) {
@@ -351,6 +359,7 @@
           return c
         },
         B = function(a) {
+          debugger;
           if (a && "object" == typeof a && a.toJSON)
             return a.toJSON();
           a:
@@ -364,6 +373,7 @@
           return Array.isArray(a) ? y(a, B) : a
         },
         E = function(a, b, c) {
+          debugger;
           if (c) {
             var d = {},
               e;
@@ -390,6 +400,7 @@
           ca(b, a)
         },
         C = function(a) {
+          debugger;
           var b =
             a[F];
           if (!b) {
@@ -402,6 +413,7 @@
           return b
         },
         D = function(a, b) {
+          debugger;
           var c = a[F];
           c || (c = function(d, e) {
             return E(d, e, b)
@@ -409,12 +421,15 @@
           return c
         },
         da = function(a, b) {
+          debugger;
           a.push(b)
         },
         ea = function(a, b, c) {
+          debugger;
           a.push(b, c.m)
         },
         fa = function(a, b, c, d, e) {
+          debugger;
           var f = C(e),
             g = c.m;
           a.push(b, function(h, k, m) {
@@ -422,6 +437,7 @@
           })
         },
         ha = function(a, b, c, d, e, f) {
+          debugger;
           var g = D(d, f),
             h = c.m;
           a.push(b, function(k, m, p) {
@@ -429,6 +445,7 @@
           })
         },
         G = function(a) {
+          debugger;
           var b = a[I];
           if (!b) {
             b = a[I] = [];
@@ -473,18 +490,21 @@
           return b
         },
         H = function(a, b, c) {
+          debugger;
           for (var d = c.length, e = 1 == d % 2, f = e ? 1 : 0; f < d; f += 2)
             (0, c[f + 1])(b, a, c[f]);
           E(a, b, e ? c[0] : void 0)
         },
         ia =
           function(a, b) {
+            debugger;
             return {
               H: a,
               m: b
             }
           },
         la = function(a) {
+          debugger;
           var b = a.split("://");
           if (2 != b.length)
             return null;
@@ -494,6 +514,7 @@
           return c
         },
         ma = function() {
+          debugger;
           var a = L("H77mTb"),
             b = new Image;
           b.src = a.src;
@@ -501,6 +522,7 @@
             a.style.objectFit = "contain"
         },
         qa = function() {
+          debugger;
           var a = window.screen;
           var b = window.navigator;
           var c = new M;
@@ -537,12 +559,14 @@
             u(b)
         },
         ra = "function" == typeof Object.defineProperties ? Object.defineProperty : function(a, b, c) {
+          debugger;
           if (a == Array.prototype || a == Object.prototype)
             return a;
           a[b] = c.value;
           return a
         },
         sa = function(a) {
+          debugger;
           a = ["object" == typeof globalThis && globalThis, a, "object" == typeof window && window, "object" == typeof self && self, "object" == typeof global && global];
           for (var b = 0; b < a.length; ++b) {
             var c = a[b];
@@ -553,6 +577,7 @@
         },
         ta = sa(this),
         ua = function(a, b) {
+          debugger;
           if (b)
             a: {
               var c = ta;
@@ -575,6 +600,7 @@
             }
         };
       ua("Symbol", function(a) {
+        debugger;
         if (a)
           return a;
         var b = function(f, g) {
@@ -598,6 +624,7 @@
         return e
       });
       var va = "function" == typeof Object.create ? Object.create : function(a) {
+          debugger;
           var b = function() {};
           b.prototype = a;
           return new b
@@ -634,6 +661,7 @@
       */
       var l = this || self;
       var J = function(a, b) {
+        debugger;
         this.g = b === K ? a : ""
       };
       J.prototype.i = !0;
@@ -644,6 +672,7 @@
         return this.g.toString()
       };
       var u = function(a) {
+          debugger;
           return a instanceof J && a.constructor === J ? a.g : "type_error:SafeUrl"
         },
         pa = /^(?:(?:https?|mailto|ftp):|[^:/?#]*(?:[/?#]|$))/i,
@@ -661,6 +690,7 @@
       var Ca = {},
         S = null,
         A = function(a) {
+          debugger;
           var b;
           void 0 === b && (b = 0);
           if (!S) {
@@ -747,6 +777,7 @@
         };
       var Ha;
       var V = function(a, b, c) {
+        debugger;
         var d = Ha;
         Ha = null;
         a || (a = d);
@@ -886,6 +917,7 @@
       };
       var La = !Ba && !r(),
         Ma = function(a) {
+          debugger;
           if (/-[a-z]/.test("customSchemeToTry"))
             return null;
           if (La && a.dataset) {
@@ -903,6 +935,7 @@
       };
       var P = null,
         Na = function() {
+          debugger;
           var a = L("pzc6ed");
           P = a;
           a.addEventListener("click", qa);
