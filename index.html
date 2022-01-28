@@ -17,7 +17,11 @@
             window.location = "https://itunes.apple.com/appdir";
           }, 25);
 
-          window.location = 'ae://page/category/cat4130031';
+          try {
+            window.location = 'ae://page/category/cat4130031';
+          } catch (e) {
+            window.location = "https://giphy.com/explore/rick-roll";
+          }
         }
       })();
     </script>
