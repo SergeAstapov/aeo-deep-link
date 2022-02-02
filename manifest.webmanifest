@@ -1,0 +1,51 @@
+{
+  "short_name": "AE + Aerie",
+  "name": "American Eagle",
+  "icons": [
+    {
+      "src": "/images/icons-vector.svg",
+      "type": "image/svg+xml",
+      "sizes": "512x512"
+    },
+    {
+      "src": "/images/icons-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/images/icons-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/aeo-deep-link?source=pwa",
+  "background_color": "#fff",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#24272a",
+  "shortcuts": [],
+  "description": "American Eagle Men’s & Women’s Jeans, Clothes & Accessories",
+  "screenshots": [
+    {
+      "src": "/images/screenshot1.png",
+      "type": "image/png",
+      "sizes": "540x720"
+    },
+    {
+      "src": "/images/screenshot2.jpg",
+      "type": "image/jpg",
+      "sizes": "540x720"
+    }
+  ],
+  "prefer_related_applications": true,
+  "related_applications": [
+    {
+      "platform": "play",
+      "url": "https://play.google.com/store/apps/details?id=com.ae.ae",
+      "id": "com.ae.ae.debug"
+    }, {
+      "platform": "itunes",
+      "url": "https://apps.apple.com/us/app/ae-aerie/id467738064"
+    }
+  ]
+}
