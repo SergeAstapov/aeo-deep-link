@@ -29,15 +29,21 @@
             window.location = 'ae://page/category/cat4130031';
           }
 
-          alert(typeof navigator.getInstalledRelatedApps)
+          alert(isAndroid);
+          alert(typeof navigator.getInstalledRelatedApps);
 
           if (isAndroid && navigator.getInstalledRelatedApps) {
-            const relatedApps = await navigator.getInstalledRelatedApps();
-            alert(JSON.stringify(relatedApps));
+            try {
+              const relatedApps = await navigator.getInstalledRelatedApps();
+              alert(JSON.stringify(relatedApps));
 
-            if (relatedApps.some(app => app.platform === 'play')) {
-              alert('Android app is installed!');
-              window.location = 'intent://page/category/cat4130031#Intent;scheme=ae;package=com.ae.ae.debug;end';
+              if (relatedApps.some(app => app.platform === 'play')) {
+                alert('Android app is installed!');
+                window.location = 'intent://page/category/cat4130031#Intent;scheme=ae;package=com.ae.ae.debug;end';
+              }
+            } catch (e) {
+              alert(e);
+              alert(e.message);
             }
           }
         }
