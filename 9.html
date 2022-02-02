@@ -39,7 +39,8 @@
 
               if (relatedApps.some(app => app.platform === 'play')) {
                 alert('Android app is installed!');
-                window.location = 'intent://page/category/cat4130031#Intent;scheme=ae;package=com.ae.ae.debug;end';
+                window.location = 'ae://page/category/cat4130031';
+                // window.location = 'intent://page/category/cat4130031#Intent;scheme=ae;package=com.ae.ae.debug;end';
               }
             } catch (e) {
               alert(e);
