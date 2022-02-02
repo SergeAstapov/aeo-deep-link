@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="click_page_type" content="cpit">
+    <meta name="enable_copy_unique_match" content="1">
+    <link rel="manifest" href="manifest.webmanifest">
+    <title>Open in app?</title>
+
+    <script>
+      (async function () {
+        let isIphone = window.navigator.userAgent.toLowerCase().match(/iphone/);
+        let isAndroid = window.navigator.userAgent.toLowerCase().match(/android/);
+
+        if (isIphone || isAndroid && !location.search.includes('deepLink')) {
+          function scheduleReload () {
+            setTimeout(function () {
+              const href = location.href;
+
+              window.location.assign(
+                (href.includes('?') ? href + '&' : href + '?') + 'deepLink'
+              );
+            }, 25);
+          }
+
+          if (isIphone) {
+            scheduleReload();
+            window.location = 'ae://page/category/cat4130031';
+          }
+
+          if (isAndroid && navigator.getInstalledRelatedApps) {
+            const relatedApps = await navigator.getInstalledRelatedApps();
+            if (relatedApps.some(app => app.platform === 'play')) {
+              scheduleReload();
+              window.location = 'intent://page/category/cat4130031#Intent;scheme=ae;package=com.ae.ae.debug;end';
+            }
+          }
+        }
+      })();
+    </script>
+</head>
+<body>
+</body>
+</html>
